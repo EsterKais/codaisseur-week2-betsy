@@ -55,3 +55,7 @@ end
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
 end
+
+# devise gem
+
+gem 'devise'
