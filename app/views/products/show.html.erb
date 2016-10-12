@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @product.name %></div>
+
+  <div class="panel-body">
+
+    <p>Race: <%= @product.race %></p>
+    <p>Owner: <%= @product.user.email %></p>
+
+    <!-- Main Info -->
+    <h4>About</h4>
+    <p><%= @product.description %></p>
+
+    <!-- Amenities, don't forget to add in amount, price, image_url -->
+    <div class="amenities">
+      <p>Country of Origin: <%= @product.country_origin %></p>
+      <p>Colour: <%= @product.color %></p>
+      <p>Age: <%= @product.age %></p>
+      <p>Gender: <%= @product.gender %></p>
+      <p><%= !@product.edible ? ("<del>Edible</del>").html_safe : "Edible" %></p>
+    </div>
+
+  </div>
+
+</div>
+
+<%= link_to "Back", products_path, class: "btn btn-default" %>
