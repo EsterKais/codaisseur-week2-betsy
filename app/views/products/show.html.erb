@@ -12,7 +12,7 @@
     <p>Colour: <%= @product.color.split.map(&:capitalize)*' '  %></p>
     <p>Country of Origin: <%= @product.country_origin.split.map(&:capitalize)*' '  %></p>
     <p><%= @product.description %></p>
-    <p>Owner: <%= @product.user.email %></p>
+    <p>Owner: <%= @product.user.full_name %></p>
     </div>
 
   </div>
