@@ -5,6 +5,7 @@
     <!-- Main Info -->
     <!-- Amenities, don't forget to add in amount, price, image_url -->
     <div class="amenities">
+<!-- split map capitalize makes sure that every word starts with a capital -->
     <p>Name: <%= @product.name.split.map(&:capitalize)*' '  %></p>
     <p>Age: <%= @product.age %></p>
     <p>Gender: <%= @product.gender.split.map(&:capitalize)*' '  %></p>

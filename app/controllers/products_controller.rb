@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
 # this shows only products that belong to the user so we need to think about the homepage product showing
     def index
-      @products = current_user.products
+      @products = Product.all
     end
 
     def show

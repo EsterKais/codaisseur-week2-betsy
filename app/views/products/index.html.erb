@@ -1,0 +1,26 @@
+<!-- <div class="panelwrap"> -->
+
+
+  <% @products.each do |product| %>
+  <div class="productpanel">
+    <div class="productheader">
+          <%= product.race.split.map(&:capitalize)*' '  %>
+    </div>
+
+    <div class="panel-body">
+      <!-- Main Info -->
+      <!-- Amenities, don't forget to add in amount, price, image_url -->
+      <div class="amenities">
+        <div class="description">
+        <%= product.description %>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+  <% end %>
+<!-- </div> -->
