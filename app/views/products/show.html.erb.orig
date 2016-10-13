@@ -4,6 +4,9 @@
   <div class="panel-body">
     <!-- Main Info -->
     <div class="amenities">
+<<<<<<< HEAD
+<!-- split map capitalize makes sure that every word starts with a capital -->
+=======
 
 
     <!-- Photos -->
@@ -18,6 +21,7 @@
 
 <!-- Amenities, don't forget to add in amount, price, image_url -->
     <h5>About</h5>
+>>>>>>> master
     <p>Name: <%= @product.name.split.map(&:capitalize)*' '  %></p>
     <p>Age: <%= @product.age %></p>
     <p>Gender: <%= @product.gender.split.map(&:capitalize)*' '  %></p>
