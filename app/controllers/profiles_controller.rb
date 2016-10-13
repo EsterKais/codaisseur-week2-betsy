@@ -2,8 +2,6 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:edit, :update]
   before_action :authenticate_user!
 
-
-
   def index
     @products = current_user.products
     @profile = current_user.profile

@@ -1,4 +1,5 @@
 Photo.delete_all
+Profile.delete_all
 Product.delete_all
 User.delete_all
 
@@ -9,10 +10,16 @@ photo4 = Photo.create(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/ima
 photo5 = Photo.create(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1476367423/Betsy/CowYoungBrown.jpg")
 photo6 = Photo.create(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1476367424/Betsy/CowPossibleHeader.jpg")
 
-laura = User.create(email: "laura@betsy.com", password: "secret")
-josha = User.create(email: "josha@betsy.com", password: "secret")
-jeff = User.create(email: "jeff@betsy.com", password: "secret")
-ester = User.create(email: "ester@betsy.com", password: "secret")
+lauraprof = Profile.create(first_name:"Laura", last_name:"de la Rie", bio: "I love cows")
+joshaprof = Profile.create(first_name:"Josha", last_name:"Grin", bio: "I love cows, too")
+jeffprof = Profile.create(first_name:"Jeffrey", last_name:"Meesters", bio: "I f%^&* love cows")
+esterprof = Profile.create(first_name:"Ester", last_name:"Kais", bio: "I really love cows")
+
+
+laura = User.create(email: "laura@betsy.com", password: "secret", profile: lauraprof)
+josha = User.create(email: "josha@betsy.com", password: "secret", profile: joshaprof)
+jeff = User.create(email: "jeff@betsy.com", password: "secret", profile: jeffprof)
+ester = User.create(email: "ester@betsy.com", password: "secret", profile: esterprof)
 
 betsy = Product.create(name: "Betsy", amount: 1, race: "Texas Longhorn", description: "This is THE Betsy!", price: 200, color: "Brown", age: 5, gender: "female", edible: false, country_origin: "The Netherlands", user: laura, photos: [photo5])
 bully = Product.create(name: "Bully", amount: 1, race: "Angus Cattle", description: "Angus cattle, known as Aberdeen Angus in most parts of the world, are a breed of cattle commonly used in beef production. ", price: 350, color: "Brown", age: 7, gender: "Male", edible: true, country_origin: "Scotland", user: jeff, photos: [photo2])
