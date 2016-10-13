@@ -1,0 +1,15 @@
+class Product < ApplicationRecord
+  belongs_to :user
+<<<<<<< HEAD
+  has_many :photos
+=======
+
+#
+#   def is_edible?
+#     @product = Product.find(params[:edible])
+#     @product.edible = true
+#   end
+>>>>>>> master
+end
+#
+# product.is_edible?
