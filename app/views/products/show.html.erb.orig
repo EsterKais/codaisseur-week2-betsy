@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @product.race.split.map(&:capitalize)*' ' %> (<%= !@product.edible ? ("Not Edible").html_safe : "Edible" %>)</div>
+
+  <div class="panel-body">
+    <!-- Main Info -->
+    <div class="amenities">
+
+    <!-- Photos -->
+    <h5>Photos</h5>
+    <% @product.photos.each do |photo| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= image_tag photo.image.thumbnail %>
+      </div>
+    </div>
+    <% end %>
+
+<!-- Amenities, don't forget to add in amount, price, image_url -->
+    <h5>About</h5>
+    <p>Name: <%= @product.name.split.map(&:capitalize)*' '  %></p>
+    <p>Age: <%= @product.age %></p>
+    <p>Gender: <%= @product.gender.split.map(&:capitalize)*' '  %></p>
+    <p>Colour: <%= @product.color.split.map(&:capitalize)*' '  %></p>
+    <p>Country of Origin: <%= @product.country_origin.split.map(&:capitalize)*' '  %></p>
+<<<<<<< HEAD
+    <p>Description: <%= @product.description %></p>
+    <h5>Owner</h5>
+    <p><%= @product.user.full_name %></p>
+=======
+    <p><%= @product.description %></p>
+    <p>Owner: <%= @product.user.full_name %></p>
+>>>>>>> master
+    </div>
+
+  </div>
+
+</div>
+
+<%= link_to "Back", products_path, class: "btn btn-default" %>
