@@ -59,3 +59,7 @@ end
 # devise gem
 
 gem 'devise'
+
+gem 'carrierwave'
+
+gem 'cloudinary'
