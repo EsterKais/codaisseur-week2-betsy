@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 # this shows only products that belong to the user so we need to think about the homepage product showing
     def index
       @products = current_user.products
