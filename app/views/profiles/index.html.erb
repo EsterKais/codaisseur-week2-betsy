@@ -10,13 +10,11 @@
 
   </div>
 
-
-
   <div class="col-md-9">
     <div class="panel panel-primary">
       <div class="panel-heading">
         <%= @profile.full_name %>
-        
+
       </div>
       <div class="panel-body">
         <h4><%= @profile.bio %></h4>
@@ -29,34 +27,5 @@
         <% end %>
       </div>
 
-
-
     </div>
   </div>
-
-
-  <div class="col-md-9">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        My Cows
-      </div>
-      <div class="panel-body">
-        <% @products.each do |product| %>
-        <div class="row">
-          <div class="col-md-7">
-            <h4><%= product.name %></h4>
-            <%= product.image_url %>
-          </div>
-          <div class="col-md-3 right">
-            <%= link_to "View", product, class: "btn btn-default" %>
-            <%= link_to "Update", edit_product_path(product), class: "btn btn-default" %>
-          </div>
-        </div>
-        <% end %>
-
-      </div>
-    </div>
-
-    <%= link_to "Add a new Cow", new_product_path, class: "btn btn-primary" %>
-  </div>
-</div>
