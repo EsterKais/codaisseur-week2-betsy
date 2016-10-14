@@ -29,7 +29,16 @@
     </div>
 
   </div>
-
 </div>
+<!-- Order Form -->
+<% if current_user != @product.user %>
+<div class="panel panel-primary">
+  <div class="panel-heading">Buy this cow!</div>
+
+  <div class="panel-body">
+    <%= render 'orders/form' %>
+  </div>
+</div>
+<% end %>
 
 <%= link_to "Back", products_path, class: "btn btn-default" %>
