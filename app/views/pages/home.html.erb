@@ -2,17 +2,27 @@
 
 
   <% @products.each do |product| %>
+
   <div class="productpanel">
     <div class="productheader">
-          <%= product.race.split.map(&:capitalize)*' ' %>
+        <strong>  <%= product.race.split.map(&:capitalize)*' ' %> </strong>
     </div>
 
     <div class="panel-body">
       <!-- Main Info -->
       <!-- Amenities, don't forget to add in amount, price, image_url -->
       <div class="amenities">
+          <%# @product.photos.each do |photo| %>
+        <!-- <div class="panel-heading"> -->
+          <%# image_tag photo.image.thumbnail %>
+
+        <!-- </div> -->
+        <%# end %>
+
+
+
         <div class="description">
-        <%= product.description %><br>
+        <%= product.description %><br><br><br>
         <%= link_to "See Cows", product_path(product.id), class: "btn btn-default" %>
         <div class="see-cows">
         </div>
