@@ -1,2 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- <div class="panelwrap"> -->
+
+
+  <% @products.each do |product| %>
+  <div class="productpanel">
+    <div class="productheader">
+          <%= product.race.split.map(&:capitalize)*' ' %>
+    </div>
+
+    <div class="panel-body">
+      <!-- Main Info -->
+      <!-- Amenities, don't forget to add in amount, price, image_url -->
+      <div class="amenities">
+        <div class="description">
+        <%= product.description %><br>
+        <%= link_to "See Cows", product_path(product.id), class: "btn btn-default" %>
+        <div class="see-cows">
+        </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <% end %>
+<!-- </div> -->
