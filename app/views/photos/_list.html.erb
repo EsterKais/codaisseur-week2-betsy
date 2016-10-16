@@ -1,7 +1,7 @@
 <% if @photos %>
   <% @photos.each do |photo| %>
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="photos">
         <%= image_tag photo.image.thumbnail %>
       </div>
       <div class="panel-body">
