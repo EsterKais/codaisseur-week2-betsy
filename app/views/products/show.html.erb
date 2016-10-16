@@ -1,44 +1,37 @@
-<div class="panel panel-primary">
-  <div class="panel-heading"><%= @product.race.split.map(&:capitalize)*' ' %> (<%= !@product.edible ? ("Not Edible").html_safe : "Edible" %>)</div>
+<div class="show-primary">
+  <div class="show-heading"><%= @product.name.upcase %></div>
+    <div class="panel-body">
 
-  <div class="panel-body">
-    <!-- Main Info -->
-    <div class="amenities">
+  <!-- Amenities -->
+        <div class="amenities">
+          <p><strong>Race:</strong> <%= @product.race.split.map(&:capitalize)*' ' %></p>
+          <p><strong>Age:</strong>  <%= @product.age %></p>
+          <p><strong>Gender:</strong>  <%= @product.gender.split.map(&:capitalize)*' ' %></p>
+          <p><strong>Colour:</strong>  <%= @product.color.split.map(&:capitalize)*' ' %></p>
+          <p><strong>Country of Origin:</strong>  <%= @product.country_origin.split.map(&:capitalize)*' ' %></p>
+          <p><strong>Description:</strong>  <%= @product.description %></p>
+          <p><strong>Note:</strong> <%= !@product.edible ? ("Not to be Eaten!").html_safe.upcase : "Edible.." %></p>
+          <p><strong>Owner:</strong> <%= @product.user.email %></p>
 
+  <!-- Order Form -->
+          <% if current_user = @product.user %>
+            <div class="actions">
+              <p><%= render 'orders/form'%></p>
+              <p><%= link_to "Edit Your Cow", edit_product_path, class: "btn-success" %></p>
+              <p><br><%= link_to "Back", root_path, class: "btn-success" %></br></p>
+            </div>
+          <% end %>
+        </div>
 
     <!-- Photos -->
-    <h5>Photos</h5>
-    <% @product.photos.each do |photo| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <%= image_tag photo.image.thumbnail %>
-      </div>
-    </div>
-    <% end %>
+        <div class="photos">
+          <p><strong>Photos</strong></p>
+            <% @product.photos.each do |photo| %>
+                <%= image_tag photo.image.thumbnail %>
+            <% end %>
+        </div>
 
-<!-- Amenities, don't forget to add in amount, price, image_url -->
-    <h5>About</h5>
-    <p>Name: <%= @product.name.split.map(&:capitalize)*' '  %></p>
-    <p>Age: <%= @product.age %></p>
-    <p>Gender: <%= @product.gender.split.map(&:capitalize)*' '  %></p>
-    <p>Colour: <%= @product.color.split.map(&:capitalize)*' '  %></p>
-    <p>Country of Origin: <%= @product.country_origin.split.map(&:capitalize)*' '  %></p>
-    <p>Description: <%= @product.description %></p>
-    <h5>Owner</h5>
-    <p><%= @product.user.full_name %></p>
+<!-- End of Panel Body -->
     </div>
 
-  </div>
 </div>
-<!-- Order Form -->
-<% if current_user != @product.user %>
-<div class="panel panel-primary">
-  <div class="panel-heading">Buy this cow!</div>
-
-  <div class="panel-body">
-    <%= render 'orders/form' %>
-  </div>
-</div>
-<% end %>
-<%= link_to "Edit Your Cow", edit_product_path, class: "btn btn-default" %>
-<%= link_to "Back", root_path, class: "btn btn-default" %>

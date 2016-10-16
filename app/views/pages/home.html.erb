@@ -1,36 +1,31 @@
-<!-- <div class="panelwrap"> -->
+<!-- All products will be displayed in this box  -->
+<div class="panelwrap">
+<% @products.each do |product| %>
+<% @product = product %>
 
-
-  <% @products.each do |product| %>
-
+<!-- One product will be displayed in this box -->
   <div class="productpanel">
+
+<!-- Inserting Race: Name -->
     <div class="productheader">
-        <strong>  <%= product.race.split.map(&:capitalize)*' ' %> </strong>
+        <strong><%= product.race %>:  <%= product.name.split.map(&:capitalize)*' ' %> </strong>
     </div>
 
-    <div class="panel-body">
-      <!-- Main Info -->
-      <!-- Amenities, don't forget to add in amount, price, image_url -->
-      <div class="amenities">
-          <%# @product.photos.each do |photo| %>
-        <!-- <div class="panel-heading"> -->
-          <%# image_tag photo.image.thumbnail %>
+<!-- Inserting Photos -->
+    <div class="product_photo">
+      <% @product.photos.each do |photo| %>
+      <%= image_tag photo.image.thumbnail_small %>
+      <% end %>
+    </div>
 
-        <!-- </div> -->
-        <%# end %>
-
-
-
-        <div class="description">
-        <%= product.description %><br><br><br>
-        <%= link_to "See Cows", product_path(product.id), class: "btn btn-default" %>
-        <div class="see-cows">
-        </div>
-        </div>
+<!-- Aligning See Cow button and Price -->
+    <div class="ButtonPrice">
+      <div class="price"><strong>€<%= product.price %></strong></div>
+      <div class="see-cows">
+          <%= link_to "See Cow", product_path(product.id), class: "btn btn-default" %>
       </div>
-
     </div>
 
   </div>
-  <% end %>
-<!-- </div> -->
+<% end %>
+</div>
