@@ -7,21 +7,6 @@ class ProductsController < ApplicationController
       @product = Product.search(params[:search])
     end
 
-    def affordable
-      @products = Product.affordable
-      render action: :index
-    end
-
-    def edible
-      @products = Product.edible
-      render action: :index
-    end
-
-    def race
-      @products = Product.race
-      render action: :index
-    end
-
     def show
       @product = Product.find(params[:id])
       @photos = @product.photos
