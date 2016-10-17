@@ -8,6 +8,10 @@ class Product < ApplicationRecord
   validates :amount, presence: true
   validates :price, presence: true
 
+  scope :affordable,     -> { where('price < ?', 400)  }
+  scope :edible,         -> { where(edible: true) }
+  scope :race,           -> { order(:race) }
+
 
   def self.search(search)
     if search
