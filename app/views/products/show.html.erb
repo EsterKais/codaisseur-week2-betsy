@@ -14,12 +14,17 @@
           <p><strong>Owner:</strong> <%= @product.user.email %></p>
 
   <!-- Order Form -->
-          <% if current_user = @product.user %>
+          <% if current_user != @product.user %>
             <div class="actions">
               <p><%= render 'orders/form'%></p>
-              <p><%= link_to "Edit Your Cow", edit_product_path, class: "btn-success" %></p>
               <p><br><%= link_to "Back", root_path, class: "btn-success" %></br></p>
             </div>
+          <% else %>
+          <div class="actions">
+            <p><%= link_to "Edit Your Cow", edit_product_path, class: "btn-success" %></p>
+            <p><br><%= link_to "Back", root_path, class: "btn-success" %></br></p>
+          </div>
+
           <% end %>
         </div>
 

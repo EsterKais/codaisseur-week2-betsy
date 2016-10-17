@@ -8,4 +8,13 @@ class Product < ApplicationRecord
   validates :amount, presence: true
   validates :price, presence: true
 
+
+  def self.search(search)
+    if search
+      where(["race LIKE ?", "%#{search}%"])
+    else
+      all
+    end
+  end
+
 end

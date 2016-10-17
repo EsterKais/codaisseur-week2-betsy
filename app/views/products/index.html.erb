@@ -11,12 +11,34 @@
         <strong><%= product.race %>:  <%= product.name.split.map(&:capitalize)*' ' %> </strong>
     </div>
 
+<<<<<<< HEAD
+    <div class="panel-body">
+      <!-- Main Info -->
+      <!-- Amenities, don't forget to add in amount, price, image_url -->
+      <div class="amenities">
+        <div class="description">
+        <%= product.description %><br>
+
+
+        <div class="product_photo">
+          <% product.photos.each do |photo| %>
+          <% image_tag photo.image.thumbnail %>
+          <% end %>
+        </div>
+
+
+        <%= link_to "See Cow", product_path(product.id), class: "btn btn-default" %>
+
+
+
+=======
 <!-- Inserting Photos -->
     <div class="product_photo">
       <% @product.photos.each do |photo| %>
       <%= image_tag photo.image.thumbnail_small %>
       <% end %>
     </div>
+>>>>>>> master
 
 <!-- Aligning See Cow button and Price -->
     <div class="ButtonPrice">
