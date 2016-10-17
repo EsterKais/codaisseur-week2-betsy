@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :products do
+    collection do
+      get :affordable
+      get :edible
+      get :race
+    end
     resources :orders, only: [:create]
   end
   resources :profiles
