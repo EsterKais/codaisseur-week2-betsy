@@ -3,13 +3,18 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:show]
-  resources :products do
+  resources :pages do
     collection do
       get :affordable
       get :edible
       get :race
+      # get :has_image
+      # get :country_of_origin
     end
+  end
+
+  resources :users, only: [:show]
+  resources :products do
     resources :orders, only: [:create]
   end
   resources :profiles
