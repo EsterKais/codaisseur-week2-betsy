@@ -2,8 +2,8 @@
 
 <!-- All products will be displayed in this box  -->
 <div class="panelwrap">
-<% @products.each do |product| %>
-<% @product = product %>
+  <% @products.each do |product| %>
+  <% @product = product %>
 
 <!-- One product will be displayed in this box -->
   <div class="productpanel">
@@ -13,46 +13,37 @@
         <strong><%= product.race %>:  <%= product.name.split.map(&:capitalize)*' ' %> </strong>
     </div>
 
-<<<<<<< HEAD
     <div class="panel-body">
       <!-- Main Info -->
       <!-- Amenities, don't forget to add in amount, price, image_url -->
       <div class="amenities">
-        <div class="description">
-        <%= product.description %><br>
-
-
+        <!-- <div class="product_photo">
+          <%# product.photos.each do |photo| %>
+          <%# image_tag photo.image.thumbnail %>
+          <%# end %>
+        </div> -->
+<!-- Inserting Photos -->
         <div class="product_photo">
-          <% product.photos.each do |photo| %>
-          <% image_tag photo.image.thumbnail %>
+          <% @product.photos.each do |photo| %>
+          <%= image_tag photo.image.thumbnail_small %>
           <% end %>
         </div>
 
-
-        <%= link_to "See Cow", product_path(product.id), class: "btn btn-default" %>
-
-
-
-=======
-<!-- Inserting Photos -->
-    <div class="product_photo">
-      <% @product.photos.each do |photo| %>
-      <%= image_tag photo.image.thumbnail_small %>
-      <% end %>
-    </div>
->>>>>>> master
-
 <!-- Aligning See Cow button and Price -->
-    <div class="ButtonPrice">
-      <div class="price"><strong>€<%= product.price %></strong></div>
-      <div class="see-cows">
-          <%= link_to "See Cow", product_path(product.id), class: "btn btn-success" %>
+        <div class="ButtonPrice">
+          <div class="price"><strong>€<%= product.price %></strong>
+          </div>
+          <div class="see-cows">
+            <%= link_to "See Cow", product_path(product.id), class: "btn btn-default" %>
+          </div>
+        </div>
       </div>
-
     </div>
 
   </div>
-
-<p class="NewCowBTN"><%= link_to "Publish a New Cow", new_product_path, class: "btn btn-success" %></p>
-<% end %>
+  <% end %>
 </div>
+  <br><br>
+  <div class="NewCowBTN">
+    <%= link_to "New Cow", new_product_path, class: "btn btn-default" %>
+  </div>

@@ -3,6 +3,17 @@
 
 * {
   font-family:'Karla', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.notice{
+  margin:0;
+  padding:0;
+}
+.alert{
+  margin:0;
+  padding:0;
 }
 
 .LogoTitle{
@@ -10,15 +21,30 @@
   flex-direction: row;
   justify-content: space-between;
   text-indent: 5px;
+  margin-top:10px;
+}
+
+.filterbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // background-color: #F8F8F8;
+  align-items: center;
+  border-bottom:1px solid #E7E7E7;
+  margin: 0px 0px 20px 0px;
+}
+
+.filteritem{
+  margin: 0px 15px 0px 15px;
 }
 
 .panelwrap{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-
-  width: 100%;
+  background:#F8F8F8;
+  width: 100%/3;
   height: 100%;
 }
 
@@ -31,11 +57,11 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
+  border: solid 1px #E7E7E7;
   background:#F8F8F8;
   color: #074E65;
 
-  width: 250px;
+  width: 200px;
   height: 200px;
   margin: 2px;
   letter-spacing:1px;
@@ -55,15 +81,11 @@
 
 .ButtonPrice{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  width: 100%;
+  align-items: row;
 }
 
 .see-cows{
-  margin: 5px;
+  margin: 5px 5px 0px 80px;
 }
 
 .backbutton{
