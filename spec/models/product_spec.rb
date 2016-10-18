@@ -15,6 +15,17 @@ RSpec.describe Product, type: :model do
     end
   end
 
+  describe "association with user" do
+    let(:user) {create :user }
+    let!(:product) { create :product, user: user}
+
+    it "belongs to a user" do
+      product = user.products.new
+
+      expect(product.user).to eq(user)
+    end
+  end
+
 
 #  Scopes, like validations, are only tested by their behaviour. see feature test
 end
