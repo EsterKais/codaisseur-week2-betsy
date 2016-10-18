@@ -13,6 +13,10 @@ RSpec.describe Product, type: :model do
     it "has buyers" do
       expect(product.buyers).to include(buyer_user)
     end
+
+    it "deletes associated order" do
+      expect { product.destroy }.to change(Order, :count).by(-1)
+    end
   end
 
   describe "association with user" do
@@ -24,6 +28,13 @@ RSpec.describe Product, type: :model do
 
       expect(product.user).to eq(user)
     end
+  end
+
+  describe "association with photos" do
+    let(:user) {create :user }
+    let!(:product) { create :product, user: user}
+    let!(:photo) { create :photo, product: product}
+
   end
 
 
