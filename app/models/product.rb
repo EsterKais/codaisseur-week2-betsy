@@ -16,9 +16,10 @@ class Product < ApplicationRecord
   scope :asia,           -> { where(country_origin: "Asia") }
   scope :latino,         -> { where(country_origin: "Latino") }
 
-
-
-
+# SEARCH STUFF
+  def self.search(search)
+    Product.where('name ILIKE :search OR race ILIKE :search OR color ILIKE :search OR description ILIKE :search', search: "%#{search}%")
+  end
 
 # ----this is for the search form that can search only by race, not currently in use ------
   # def self.search(search)
