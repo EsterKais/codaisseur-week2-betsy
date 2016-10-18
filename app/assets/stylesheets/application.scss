@@ -6,7 +6,7 @@
   margin: 0px;
   padding: 0px;
 }
-
+// remove unneccesary space
 .notice{
   margin:0;
   padding:0;
@@ -23,7 +23,7 @@
   text-indent: 5px;
   margin-top:10px;
 }
-
+// filter stuff
 .filterbar{
   display: flex;
   flex-direction: row;
@@ -41,10 +41,10 @@
 .panelwrap{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
-  background:#F8F8F8;
-  width: 100%/3;
+
+  width: 100%;
   height: 100%;
 }
 
@@ -57,7 +57,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: solid 1px #E7E7E7;
+
   background:#F8F8F8;
   color: #074E65;
 
@@ -81,11 +81,16 @@
 
 .ButtonPrice{
   display: flex;
-  align-items: row;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
 }
 
 .see-cows{
-  margin: 5px 5px 0px 80px;
+  // margin: 5px 5px 0px 80px;
+    margin: 5px;
 }
 
 .backbutton{

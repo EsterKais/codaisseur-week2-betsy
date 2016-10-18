@@ -1,10 +1,4 @@
-
-
 <!-- All products will be displayed in this box  -->
-
-<%= render 'products/searchform' %>
-<br>
-
 <div class="panelwrap">
   <% @products.each do |product| %>
   <% @product = product %>
@@ -17,50 +11,23 @@
         <strong><%= product.race %>:  <%= product.name.split.map(&:capitalize)*' ' %> </strong>
     </div>
 
-<<<<<<< HEAD
-    <div class="panel-body">
-      <!-- Main Info -->
-      <!-- Amenities, don't forget to add in amount, price, image_url -->
-      <div class="amenities">
-        <!-- <div class="product_photo">
-          <%# product.photos.each do |photo| %>
-          <%# image_tag photo.image.thumbnail %>
-          <%# end %>
-        </div> -->
-<!-- Inserting Photos -->
-        <div class="product_photo">
-          <% @product.photos.each do |photo| %>
-          <%= image_tag photo.image.thumbnail_small %>
-          <% end %>
-        </div>
-=======
 <!-- Inserting Photos -->
     <div class="product_photo">
       <% @product.photos.each do |photo| %>
       <%= image_tag photo.image.thumbnail_small %>
       <% end %>
     </div>
->>>>>>> master
 
 <!-- Aligning See Cow button and Price -->
-        <div class="ButtonPrice">
-          <div class="price"><strong>€<%= product.price %></strong>
-          </div>
-          <div class="see-cows">
-            <%= link_to "See Cow", product_path(product.id), class: "btn btn-default" %>
-          </div>
-        </div>
+    <div class="ButtonPrice">
+      <div class="price"><strong>€<%= product.price %></strong></div>
+      <div class="see-cows">
+          <%= link_to "See Cow", product_path(product.id), class: "btn btn-success" %>
       </div>
     </div>
 
   </div>
-<<<<<<< HEAD
+  <!-- end of product panel -->
   <% end %>
-=======
-<% end %>
->>>>>>> master
 </div>
-  <br><br>
-  <div class="NewCowBTN">
-    <%= link_to "New Cow", new_product_path, class: "btn btn-default" %>
-  </div>
+<!-- end of panel wrap -->
