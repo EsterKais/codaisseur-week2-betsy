@@ -11,15 +11,22 @@ class Product < ApplicationRecord
   scope :affordable,     -> { where('price < ?', 400)  }
   scope :edible,         -> { where(edible: true) }
   scope :race,           -> { order(:race) }
-  scope :country_of_origin, -> (country) { where("country_origin LIKE ?", country) }
+  scope :europe,         -> { where(country_origin: "Europe") }
+  scope :north_america,  -> { where(country_origin: "North-America") }
+  scope :asia,           -> { where(country_origin: "Asia") }
+  scope :latino,         -> { where(country_origin: "Latino") }
 
 
-  def self.search(search)
-    if search
-      where(["race LIKE ?", "%#{search}%"])
-    else
-      all
-    end
-  end
+
+
+
+# ----this is for the search form that can search only by race, not currently in use ------
+  # def self.search(search)
+  #   if search
+  #     where(["race LIKE ?", "%#{search}%"])
+  #   else
+  #     all
+  #   end
+  # end
 
 end

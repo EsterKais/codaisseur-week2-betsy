@@ -1,25 +1,36 @@
 
 <div class="filterbar">
-  <div class="filteritem">
-    <%= link_to "Affordables", affordable_pages_path %>
+  <div class ="filteritems">
+    <div class="filteritem">
+      <%= link_to "Affordables", affordable_pages_path %>
+    </div>
+    <div class="filteritem">
+      <%= link_to "Edibles", edible_pages_path %>
+    </div>
+    <div class="filteritem">
+      <%= link_to "Races", race_pages_path %>
+    </div>
+    <div class="filteritem">
+      <%= link_to "All", root_path %>
+    </div>
   </div>
-  <div class="filteritem">
-    <%= link_to "Edibles", edible_pages_path %>
+
+  <div class="originfilters">
+    <p> Filter by Origin: </p>
+    <div class="originfilter">
+      <%= link_to "Europe", europe_pages_path %>
+    </div>
+    <div class="originfilter">
+      <%= link_to "North-America", north_america_pages_path %>
+    </div>
+    <div class="originfilter">
+      <%= link_to "Asia", asia_pages_path %>
+    </div>
+    <div class="originfilter">
+      <%= link_to "South-America", latino_pages_path %>
+    </div>
   </div>
-  <div class="filteritem">
-    <%= link_to "Races", race_pages_path %>
-  </div>
-<!-- not yet active  VVV-->
-  <!-- <div class="filteritem">
-    <%# link_to "With Image", with_image_pages_path %>
-  </div> -->
-  <div class="filteritem">
-    <%= select("Races", "race", Product.all.collect(&:race)) %>
-  </div>
-  <div class="filteritem">
-    <%= select("Origin", "country_origin", Product.all.collect(&:country_origin)) %>
-  </div>
-<!-- not yet active ^^^ -->
+<!-- This is for the search form that searches by race and is not currently active -->
   <!-- <div class="filteritem">
     <%# render 'products/searchform' %>
   </div> -->
@@ -36,6 +47,7 @@
 <!-- Inserting Race: Name -->
     <div class="productheader">
         <strong><%= product.race %>:  <%= product.name.split.map(&:capitalize)*' ' %> </strong>
+        <%= product.country_origin %>
     </div>
 
 <!-- Inserting Photos -->

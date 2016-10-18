@@ -14,13 +14,13 @@
   </div>
 
   <div class="form-group">
-    <label>Race of the Cow *</label>
+    <label>Race of your Cow *</label>
     <%= f.text_field :race, placeholder: "What is the race of your cow?", class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <label>Country of Origin</label>
-    <%= f.text_field :country_origin, placeholder: "Where is your cow from?", class: "form-control" %>
+    <label>Origin</label>
+    <%= f.select :country_origin, [["Europe", "Europe"], ["North-America", "North-America"], ["Asia", "Asia"], ["Latino", "Latino"]], prompt: "Your cow's origin?", class: "form-control" %>
   </div>
 
   <div class="form-group">

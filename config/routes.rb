@@ -12,8 +12,10 @@ Rails.application.routes.draw do
       get :affordable
       get :edible
       get :race
-      # get :has_image
-      # get :country_of_origin
+      get :europe
+      get :north_america
+      get :asia
+      get :latino
     end
   end
 
