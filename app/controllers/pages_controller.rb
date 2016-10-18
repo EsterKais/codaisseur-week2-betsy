@@ -40,5 +40,29 @@ class PagesController < ApplicationController
     render action: :home
   end
 
+  def female
+    @products = Product.female
+    render action: :home
+  end
+
+  def male
+    @products = Product.male
+    render action: :home
+  end
+
+  def young
+    @products = Product.young
+    render action: :home
+  end
+
+  def mature
+    @products = Product.mature
+    render action: :home
+  end
+
+  def old
+    @products = Product.old
+    render action: :home
+  end
 
 end
