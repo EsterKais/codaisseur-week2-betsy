@@ -35,6 +35,9 @@ RSpec.describe Product, type: :model do
     let!(:product) { create :product, user: user}
     let!(:photo) { create :photo, product: product}
 
+    it "has many photos" do
+      expect(product.photos).to include(photo)
+    end
   end
 
 
