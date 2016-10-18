@@ -62,7 +62,7 @@
 .panelwrap{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
 
   margin-top: 20px;
@@ -85,7 +85,7 @@
 
   width: 200px;
   height: 200px;
-  margin: 2px;
+  margin: 13px;
   letter-spacing:1px;
 }
 
