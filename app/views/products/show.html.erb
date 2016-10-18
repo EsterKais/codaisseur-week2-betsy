@@ -11,6 +11,7 @@
           <p><strong>Country of Origin:</strong>  <%= @product.country_origin.split.map(&:capitalize)*' ' %></p>
           <p><strong>Description:</strong>  <%= @product.description %></p>
           <p><strong>Note:</strong> <%= !@product.edible ? ("Not to be Eaten!").html_safe.upcase : "Edible.." %></p>
+          <p><strong>Price:</strong> €<%= @product.price %></p>
           <p><strong>Owner:</strong> <%= @product.user.has_profile? ? @product.user.full_name : @product.user.email  %></p>
           <br>
 
