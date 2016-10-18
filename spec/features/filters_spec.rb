@@ -116,3 +116,52 @@ describe "north-america" do
     expect(page).not_to have_text("Dude3")
   end
 end
+
+describe "asia" do
+  let(:user) { create :user }
+
+  let!(:product1) { create :product, name: "Dude1", country_origin: "Asia", user: user }
+  let!(:product2) { create :product, name: "Dude2", country_origin: "North-America", user: user }
+  let!(:product3) { create :product, name: "Dude3", country_origin: "Latino", user: user }
+  let!(:product4) { create :product, name: "Dude4", country_origin: "Asia", user: user }
+
+  it "shows all products with origin asia" do
+    visit asia_pages_path
+
+    expect(page).to have_text("Dude1")
+    expect(page).to have_text(product1.country_origin)
+    expect(page).to have_text("Dude4")
+    expect(page).to have_text(product4.country_origin)
+
+  end
+
+  it "shows only products with origin asia" do
+    visit asia_pages_path
+
+    expect(page).not_to have_text("Dude2")
+    expect(page).not_to have_text("Dude3")
+  end
+end
+
+describe "latino" do
+  let(:user) { create :user }
+
+  let!(:product1) { create :product, name: "Dude1", country_origin: "Latino", user: user }
+  let!(:product2) { create :product, name: "Dude2", country_origin: "North-America", user: user }
+  let!(:product3) { create :product, name: "Dude3", country_origin: "Asia", user: user }
+  let!(:product4) { create :product, name: "Dude4", country_origin: "Latino", user: user }
+
+  it "shows all products with origin latino" do
+    visit latino_pages_path
+
+    expect(page).to have_text("Dude1")
+    expect(page).to have_text("Dude4")
+  end
+
+  it "shows only products with origin latino" do
+    visit latino_pages_path
+
+    expect(page).not_to have_text("Dude2")
+    expect(page).not_to have_text("Dude3")
+  end
+end
