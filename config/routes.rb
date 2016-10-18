@@ -16,6 +16,11 @@ Rails.application.routes.draw do
       get :north_america
       get :asia
       get :latino
+      get :female
+      get :male
+      get :young
+      get :mature
+      get :old
     end
   end
 

@@ -1,10 +1,10 @@
 <div class="filterbar">
   <div class ="filteritems">
     <div class="filteritem">
-      <%= link_to "Affordables", affordable_pages_path %>
+      <%= link_to "On Sale!", affordable_pages_path %>
     </div>
     <div class="filteritem">
-      <%= link_to "Edibles", edible_pages_path %>
+      <%= link_to "Edible Cows", edible_pages_path %>
     </div>
     <div class="filteritem">
       <%= link_to "Sort A-Z", by_race_pages_path %>
@@ -14,6 +14,33 @@
     </div>
   </div>
 
+  <!-- FILTER BY GENDER -->
+  <div class="originfilters">
+    <p> Filter by Gender: </p>
+    <div class="originfilter">
+      <%= link_to "Female", female_pages_path %>
+    </div>
+    <div class="originfilter">
+      <%= link_to "Male", male_pages_path %>
+    </div>
+  </div>
+
+  <!-- END OF FILTER BY GENDER -->
+  <!-- FILTER BY AGE -->
+  <div class="originfilters">
+    <p> Filter by Age: </p>
+    <div class="originfilter">
+      <%= link_to "Young", young_pages_path %>
+    </div>
+    <div class="originfilter">
+      <%= link_to "Mature", mature_pages_path %>
+    </div>
+    <div class="originfilter">
+      <%= link_to "Old", old_pages_path %>
+    </div>
+  </div>
+
+  <!-- END OF FILTER BY AGE -->
   <div class="originfilters">
     <p> Filter by Origin: </p>
     <div class="originfilter">
@@ -29,6 +56,10 @@
       <%= link_to "South-America", latino_pages_path %>
     </div>
   </div>
+
+
+
+
 <!-- This is for the search form that searches by race and is not currently active -->
   <!-- <div class="filteritem">
     <%# render 'products/searchform' %>
