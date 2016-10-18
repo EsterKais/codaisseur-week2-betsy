@@ -1,9 +1,6 @@
 require 'rails_helper'
 
-
-
 describe "affordable" do
-
   let(:user) { create :user }
 
   let!(:product1) { create :product, name: "Dude1", price: 450, user: user }
@@ -23,12 +20,9 @@ describe "affordable" do
 
     expect(page).not_to have_text(product1.name)
   end
-
 end
 
-
 describe "edible" do
-
   let(:user) { create :user }
 
   let!(:product1) { create :product, name: "Dude1", edible: true, user: user }
@@ -46,13 +40,9 @@ describe "edible" do
 
     expect(page).not_to have_text(product2.name)
   end
-
-
-
 end
 
 describe "by_race" do
-
   let(:user) { create :user }
 
   let!(:product1) { create :product, name: "Dude1", race: "Animal", user: user }
@@ -74,13 +64,30 @@ describe "by_race" do
     expect(Product.last).to eq(product3)
   end
 
+end
 
-  # it "doesn't show products where edible has the value false" do
-  #   visit by_race_pages_path
-  #
-  #   expect(page).not_to have_text(product2.name)
-  # end
+describe "europe" do
+  let(:user) { create :user }
 
+  let!(:product1) { create :product, name: "Dude1", country_origin: "Europe", user: user }
+  let!(:product2) { create :product, name: "Dude2", country_origin: "Asia", user: user }
+  let!(:product3) { create :product, name: "Dude3", country_origin: "Latino", user: user }
+  let!(:product4) { create :product, name: "Dude4", country_origin: "Whatever", user: user }
+
+  it "shows all products with origin europe" do
+    visit europe_pages_path
+
+    expect(page).to have_text("Dude1")
+    expect(page).to have_text(product1.country_origin)
+  end
+
+  it "doesn't show products with any other origin than europe" do
+    visit europe_pages_path
+
+    expect(page).not_to have_text("Dude2")
+    expect(page).not_to have_text("Dude3")
+    expect(page).not_to have_text("Dude4")
+  end
 
 
 end
