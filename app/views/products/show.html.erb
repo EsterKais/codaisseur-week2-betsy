@@ -11,19 +11,20 @@
           <p><strong>Country of Origin:</strong>  <%= @product.country_origin.split.map(&:capitalize)*' ' %></p>
           <p><strong>Description:</strong>  <%= @product.description %></p>
           <p><strong>Note:</strong> <%= !@product.edible ? ("Not to be Eaten!").html_safe.upcase : "Edible.." %></p>
-          <p><strong>Owner:</strong> <%= @product.user.email %></p>
+          <p><strong>Owner:</strong> <%= @product.user.has_profile? ? @product.user.full_name : @product.user.email  %></p>
+          <br>
 
   <!-- Order Form -->
           <% if current_user != @product.user %>
             <div class="actions">
-              <p><a href="/cart/<%= @product.id %>"> Add the Damn Cow to your Cart </a>
+              <p><a href="/cart/<%= @product.id %>", class="btn btn-success"> Add to Cart </a>
               <!-- <p><%#= render 'orders/form'%></p> -->
-              <p><br><%= link_to "Back", root_path, class: "btn-success" %></br></p>
+              <p><br><%= link_to "Back", root_path, class: "btn btn-success" %></br></p>
             </div>
           <% else %>
           <div class="actions">
-            <p><%= link_to "Edit Your Cow", edit_product_path, class: "btn-success" %></p>
-            <p><br><%= link_to "Back", root_path, class: "btn-success" %></br></p>
+            <p><%= link_to "Edit Your Cow", edit_product_path, class: "btn btn-success" %></p>
+            <p><br><%= link_to "Back", root_path, class: "btn btn-success" %></br></p>
           </div>
 
           <% end %>
