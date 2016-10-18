@@ -50,3 +50,37 @@ describe "edible" do
 
 
 end
+
+describe "by_race" do
+
+  let(:user) { create :user }
+
+  let!(:product1) { create :product, name: "Dude1", race: "Animal", user: user }
+  let!(:product2) { create :product, name: "Dude2", race: "Banimal", user: user }
+  let!(:product3) { create :product, name: "Dude2", race: "Canimal", user: user }
+
+  it "shows all products" do
+    visit by_race_pages_path
+
+    expect(page).to have_text("Animal")
+    expect(page).to have_text("Banimal")
+    expect(page).to have_text("Canimal")
+  end
+
+  it "shows all products alphabetically ordered by the first letter of their race" do
+    visit by_race_pages_path
+
+    expect(Product.first).to eq(product1)
+    expect(Product.last).to eq(product3)
+  end
+
+
+  # it "doesn't show products where edible has the value false" do
+  #   visit by_race_pages_path
+  #
+  #   expect(page).not_to have_text(product2.name)
+  # end
+
+
+
+end
