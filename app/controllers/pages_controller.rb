@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
     @products = Product.all
+# Searching stuff
+    @products = Product.search (params[:search]) unless params[:search].blank?
   end
 
   def affordable

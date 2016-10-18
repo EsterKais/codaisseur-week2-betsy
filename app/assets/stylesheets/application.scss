@@ -6,6 +6,33 @@
   margin: 0px;
   padding: 0px;
 }
+
+// NAVBAR + SEARCH FUNCTION
+
+.navbar-header{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  // border: solid 2px green;
+  width: 100%;
+  height: 20px;
+}
+
+.SearchField{
+  // border: solid 2px red;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+
+  width: 80%;
+}
+
+// END OF NAVBAR + SEARCH FUNCTION
+.form-control{
+    // border: solid 2px red;
+}
+
 // remove unneccesary space
 .notice{
   margin:0;
