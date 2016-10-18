@@ -41,5 +41,34 @@ RSpec.describe Product, type: :model do
   end
 
 
+  describe "validations" do
+
+    it "is invalid without a race" do
+      product = Product.new(race: "")
+      product.valid?
+      expect(product.errors).to have_key(:race)
+    end
+
+    it "is invalid without an amount" do
+      product = Product.new(amount: "")
+      product.valid?
+      expect(product.errors).to have_key(:amount)
+    end
+
+    it "is invalid without a price" do
+      product = Product.new(price: "")
+      product.valid?
+      expect(product.errors).to have_key(:price)
+    end
+
+    it "is valid without a name" do
+      product = Product.new(name: "")
+      product.valid?
+      expect(product.errors).not_to have_key(:name)
+    end
+
+  end
+
+
 #  Scopes, like validations, are only tested by their behaviour. see feature test
 end
