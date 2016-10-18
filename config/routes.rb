@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cart/index'
+  get '/cart/clearCart'
+  get '/cart/:id' => "cart#add"
+
   root to: 'pages#home'
 
   devise_for :users
