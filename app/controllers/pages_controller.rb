@@ -13,8 +13,8 @@ class PagesController < ApplicationController
     render action: :home
   end
 
-  def race
-    @products = Product.race
+  def by_race
+    @products = Product.by_race
     render action: :home
   end
 

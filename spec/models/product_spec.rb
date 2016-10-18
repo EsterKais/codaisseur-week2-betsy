@@ -15,4 +15,6 @@ RSpec.describe Product, type: :model do
     end
   end
 
+
+#  Scopes, like validations, are only tested by their behaviour. see feature test
 end
