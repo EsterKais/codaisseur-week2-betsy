@@ -8,9 +8,9 @@ class Product < ApplicationRecord
   validates :amount, presence: true
   validates :price, presence: true
 
-  scope :affordable,     -> { where('price < ?', 400)  }
+  scope :affordable,     -> { where('price <= ?', 400)  }
   scope :edible,         -> { where(edible: true) }
-  scope :race,           -> { order(:race) }
+  scope :by_race,        -> { order(:race) }
   scope :europe,         -> { where(country_origin: "Europe") }
   scope :north_america,  -> { where(country_origin: "North-America") }
   scope :asia,           -> { where(country_origin: "Asia") }

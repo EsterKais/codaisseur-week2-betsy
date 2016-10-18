@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     collection do
       get :affordable
       get :edible
-      get :race
+      get :by_race
       get :europe
       get :north_america
       get :asia
