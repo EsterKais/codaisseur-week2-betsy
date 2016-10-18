@@ -1,13 +1,29 @@
 
-
-
-<p><%= link_to "Affordables", affordable_pages_path %></p>
-<p><%= link_to "Edibles", edible_pages_path %> </p>
-<p><%= link_to "Races", race_pages_path %> </p>
-
-
-<%= render 'products/searchform' %>
-<br>
+<div class="filterbar">
+  <div class="filteritem">
+    <%= link_to "Affordables", affordable_pages_path %>
+  </div>
+  <div class="filteritem">
+    <%= link_to "Edibles", edible_pages_path %>
+  </div>
+  <div class="filteritem">
+    <%= link_to "Races", race_pages_path %>
+  </div>
+<!-- not yet active  VVV-->
+  <!-- <div class="filteritem">
+    <%# link_to "With Image", with_image_pages_path %>
+  </div> -->
+  <div class="filteritem">
+    <%= select("Races", "race", Product.all.collect(&:race)) %>
+  </div>
+  <div class="filteritem">
+    <%= select("Origin", "country_origin", Product.all.collect(&:country_origin)) %>
+  </div>
+<!-- not yet active ^^^ -->
+  <!-- <div class="filteritem">
+    <%# render 'products/searchform' %>
+  </div> -->
+</div>
 
 <!-- All products will be displayed in this box  -->
 <div class="panelwrap">

@@ -11,6 +11,7 @@ class Product < ApplicationRecord
   scope :affordable,     -> { where('price < ?', 400)  }
   scope :edible,         -> { where(edible: true) }
   scope :race,           -> { order(:race) }
+  scope :country_of_origin, -> (country) { where("country_origin LIKE ?", country) }
 
 
   def self.search(search)
