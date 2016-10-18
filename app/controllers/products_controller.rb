@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 # this shows only products that belong to the user so we need to think about the homepage product showing
     def index
       @products = current_user.products
-      @product = Product.search(params[:search])
+      # @product = Product.search(params[:search])
     end
 
     def show
