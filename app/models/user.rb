@@ -17,8 +17,9 @@ class User < ApplicationRecord
    profile.full_name
  end
 
- def bio
-    profile.bio
- end
+ # doesn't seem to break anything - leaving it in just in case
+ # def bio
+ #    profile.bio
+ # end
 
 end
