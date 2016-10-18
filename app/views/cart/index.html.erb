@@ -1,19 +1,33 @@
-<h1>Your Potential Cows</h1>
-<br><br><br>
 <% total = 0 %>
-  <ul>
-    <% @cart.each do | id, quantity | %>
-      <% @product = Product.find_by_id(id) %>
-      <li><%= link_to @product.name, @product %> <br>€<%= @product.price %> <br>Quantity: <%= quantity %></li>
-      <% total += quantity * @product.price %>
-      <% end %>
-  </ul>
+<div class="show-heading">YOUR POTENTIAL COWS</div>
+  <div class="cart-body">
 
-<p><strong>€<%=total%></strong></p>
-<% if @cart.empty? %>
-  <p> <%= link_to "You ain't got no Cows..click here to go get some!", root_path %></p>
-  <% else %>
-<%= link_to "I need more Cows!", root_path %>
-<br>
-<%= link_to "I don't want these Cows anymore!", cart_clearCart_path %>
-<% end %>
+<!-- PRODUCTS IN CART -->
+        <div class="amenities">
+            <ul>
+              <% @cart.each do | id, quantity | %>
+                <% @product = Product.find_by_id(id) %>
+                <li class="show-heading profile-list"><strong><%= quantity %><%=" "%><%= link_to @product.name, @product %> €<%= @product.price %></strong></li>
+            </ul>
+            <br><br><br>
+            <% total += quantity * @product.price %>
+            <% end %>
+        </div>
+<!-- SHOWING TOTAL -->
+        <div class="show-heading">TOTAL PRICE</div>
+        <div class="show-heading">€<%=total%></div>
+        <br><br><br>
+
+<!-- EXTRA ACTIONS -->
+      <div class="cart-actions">
+        <% if @cart.empty? %>
+          <%= link_to "Let's get some Cows!", root_path, class:"btn-success" %>
+          <br><br><br>
+          <% else %>
+        <%= link_to "I need more Cows!", root_path, class:"btn-success"  %>
+        <br><br><br>
+        <%= link_to "These ain't my Cows!", cart_clearCart_path, class:"btn-success"  %>
+        <% end %>
+      </div>
+</div>
+<!-- end of panel-body -->

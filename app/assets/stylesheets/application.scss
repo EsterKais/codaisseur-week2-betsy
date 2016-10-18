@@ -215,6 +215,17 @@ text-align: center;
   height: 60px;
 }
 
+// CART STYLING
+.cart-body{
+
+}
+
+.cart-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 // OVERALL STYLING
 html {
     position: relative;
