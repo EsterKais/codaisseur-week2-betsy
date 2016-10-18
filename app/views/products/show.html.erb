@@ -16,7 +16,8 @@
   <!-- Order Form -->
           <% if current_user != @product.user %>
             <div class="actions">
-              <p><%= render 'orders/form'%></p>
+              <p><a href="/cart/<%= @product.id %>"> Add the Damn Cow to your Cart </a>
+              <!-- <p><%#= render 'orders/form'%></p> -->
               <p><br><%= link_to "Back", root_path, class: "btn-success" %></br></p>
             </div>
           <% else %>

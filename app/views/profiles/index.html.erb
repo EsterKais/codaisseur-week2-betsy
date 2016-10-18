@@ -1,31 +1,35 @@
-<div class="row">
-  <div class="col-md-3">
-    <ul class="sidebar-list">
-      <!-- <li class="sidebar-item"><%= link_to "Your Cows", products_path, class: "sidebar-link active" %></li>
-      <li class="sidebar-item"><%= link_to "Your Potential Cows", products_path, class: "sidebar-link" %></li> -->
-    </ul>
-  </div>
+<!-- The profile will be displayed inside panelwrap -->
+<div class="profile-panel">
 
-  <div class="panel-heading">
+  <div class="profile-heading">
+    <p> PROFILE INFORMATION </p>
+  </div> <!-- end of panel-heading -->
 
-  </div>
+    <div class="panel-body">
+      <ul class="profile-list">
+        <li class="profile-list-item"><strong> Info </strong></li>
+        <li class="profile-list-item"><strong> First Name: </strong> <%= @profile.first_name %></li>
+        <li class="profile-list-item"><strong> Last Name: </strong><%= @profile.last_name %></li>
+        <li class="profile-list-item"><strong> Bio: </strong><%= @profile.bio %></li>
+        <li class="profile-buttons">
+          <% if user_signed_in? %>
+          <%= link_to "Update", edit_profile_path(:id), class: "btn-success" %>
+          <% else %>
+          <%= link_to "Contact", profiles_path, class: "btn-success" %>
+          <% end %>
+        </li>
+      </ul>
 
-  <div class="col-md-9">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <%= @profile.full_name %>
+    <div class="profile-picture">
+      <strong>Photo(s)</strong>
+        <%# @product.photos.each do |photo| %>
+        <%#= image_tag photo.image.thumbnail %>
+        <%# end %>
+    </div> <!-- end of profile-picture -->
 
-      </div>
-      <div class="panel-body">
-        <h4><%= @profile.bio %></h4>
-      </div>
-      <div class="col-md-3 right">
-        <% if !user_signed_in? %>
-        <%= link_to "Update", edit_profile_path(profile), class: "btn btn-default" %>
-        <% else %>
-        <%= link_to "Contact", profiles_path, class: "btn btn-default" %>
-        <% end %>
-      </div>
+  </div> <!-- end of panel-body -->
 
-    </div>
-  </div>
+
+
+
+</div> <!-- end of panelwrap -->

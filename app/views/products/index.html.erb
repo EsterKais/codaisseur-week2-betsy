@@ -1,6 +1,10 @@
 
 
 <!-- All products will be displayed in this box  -->
+
+<%= render 'products/searchform' %>
+<br>
+
 <div class="panelwrap">
   <% @products.each do |product| %>
   <% @product = product %>
@@ -13,6 +17,7 @@
         <strong><%= product.race %>:  <%= product.name.split.map(&:capitalize)*' ' %> </strong>
     </div>
 
+<<<<<<< HEAD
     <div class="panel-body">
       <!-- Main Info -->
       <!-- Amenities, don't forget to add in amount, price, image_url -->
@@ -28,6 +33,14 @@
           <%= image_tag photo.image.thumbnail_small %>
           <% end %>
         </div>
+=======
+<!-- Inserting Photos -->
+    <div class="product_photo">
+      <% @product.photos.each do |photo| %>
+      <%= image_tag photo.image.thumbnail_small %>
+      <% end %>
+    </div>
+>>>>>>> master
 
 <!-- Aligning See Cow button and Price -->
         <div class="ButtonPrice">
@@ -41,7 +54,11 @@
     </div>
 
   </div>
+<<<<<<< HEAD
   <% end %>
+=======
+<% end %>
+>>>>>>> master
 </div>
   <br><br>
   <div class="NewCowBTN">

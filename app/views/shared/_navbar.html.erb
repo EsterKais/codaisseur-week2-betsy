@@ -25,6 +25,7 @@
 
               <ul class="dropdown-menu">
                   <li><%= link_to "Your Cows", products_path %></li>
+                  <li><%= link_to "Your Cart", "/cart/index" %></li>
                   <li role="separator" class="divider"></li>
 
                   <% if current_user.has_profile? %>
