@@ -7,10 +7,11 @@
 
     <div class="panel-body">
       <ul class="profile-list">
-        <li class="profile-list-item"><strong> Info </strong></li>
+        <!-- <li class="profile-list-item"><strong> Info </strong></li> -->
         <li class="profile-list-item"><strong> First Name: </strong> <%= @profile.first_name %></li>
         <li class="profile-list-item"><strong> Last Name: </strong><%= @profile.last_name %></li>
         <li class="profile-list-item"><strong> Bio: </strong><%= @profile.bio %></li>
+        <br>
         <li class="profile-buttons">
           <% if user_signed_in? %>
           <%= link_to "Update", edit_profile_path(:id), class: "btn-success" %>
@@ -20,12 +21,14 @@
         </li>
       </ul>
 
-    <div class="profile-picture">
-      <strong>Photo(s)</strong>
+<!-- IF WE DECIDE TO USE IT IN THE FUTURE -->
+    <!-- <div class="profile-picture"> -->
+      <!-- <strong>Photo(s)</strong> -->
         <%# @product.photos.each do |photo| %>
         <%#= image_tag photo.image.thumbnail %>
         <%# end %>
-    </div> <!-- end of profile-picture -->
+    <!-- </div>  -->
+    <!-- end of profile-picture -->
 
   </div> <!-- end of panel-body -->
 
