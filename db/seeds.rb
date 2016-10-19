@@ -1,5 +1,6 @@
 Photo.delete_all
 Profile.delete_all
+Order.delete_all
 Product.delete_all
 User.delete_all
 
