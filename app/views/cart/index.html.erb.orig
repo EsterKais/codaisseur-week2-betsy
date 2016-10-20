@@ -6,12 +6,22 @@
         <div class="amenities">
             <ul id="cart">
               <% @cart.each do | id, quantity | %>
+<<<<<<< HEAD
+                <% @product = Product.find(id) %>
+                <li class="show-heading profile-list">
+                  <strong>
+                    <%= quantity %><%=" "%>
+                    <%= link_to @product.name, @product %>
+                    €<%= @product.price %>
+                  </strong>
+=======
                 <% @product = Product.find_by_id(id) %>
                 <li id="cartitem-1" class="show-heading profile-list" data-quantity="<%= quantity %>" data-price="<%= @product.price %>">
                   <span id="quantity"><strong><%= quantity %><%=" "%></span>
                   <span id="name"><%= link_to @product.name, @product %></span>
                   <span id="price"> €<%= @product.price %></strong></span>
                   <span><a href="/cart/<%= @product.id %>", id="AddToCart" class="btn btn-success"> Add Another </a></span>
+>>>>>>> master
                 </li>
               <% end %>
             </ul>
