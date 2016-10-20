@@ -13,6 +13,10 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # todo
+    # find out why there are no line_items and fix it
+    # map through your line_items and calc your amount (quantity x price), than sum it up
+
     @order.save
     session[:cart] = {}
     redirect_to order_path(@order), notice: "Your order was placed"

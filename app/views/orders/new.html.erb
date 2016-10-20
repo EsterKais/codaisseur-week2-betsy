@@ -1,7 +1,6 @@
 
     <% if @cart %>
 
-      <%= form_for @order do |f| %>
         <span>Product</span>
         <span>Quantity</span>
         <span>Price</span>
@@ -12,9 +11,9 @@
             <span><%= item.product.price %></span>
         <% end %>
 
-        <span><%= @order.get_total_price %></span>
 
-        <%= f.hidden_field :total_price, value: @order.get_total_price %>
+        <%= form_for @order do |f| %>
+
 
           <div class="buttons">
             <%= f.submit "Submit Order", class: "btn btn-primary" %>
