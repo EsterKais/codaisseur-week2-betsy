@@ -4,18 +4,23 @@
 
 <!-- PRODUCTS IN CART -->
         <div class="amenities">
-            <ul>
+            <ul id="cart">
               <% @cart.each do | id, quantity | %>
                 <% @product = Product.find_by_id(id) %>
-                <li class="show-heading profile-list"><strong><%= quantity %><%=" "%><%= link_to @product.name, @product %> €<%= @product.price %></strong></li>
+                <li id="cartitem-1" class="show-heading profile-list" data-quantity="<%= quantity %>" data-price="<%= @product.price %>">
+                  <span id="quantity"><strong><%= quantity %><%=" "%></span>
+                  <span id="name"><%= link_to @product.name, @product %></span>
+                  <span id="price"> €<%= @product.price %></strong></span>
+                  <span><a href="/cart/<%= @product.id %>", id="AddToCart" class="btn btn-success"> Add Another </a></span>
+                </li>
+              <% end %>
             </ul>
             <br><br><br>
-            <% total += quantity * @product.price %>
-            <% end %>
+            <%# total += quantity * @product.price %>
         </div>
 <!-- SHOWING TOTAL -->
         <div class="show-heading">TOTAL PRICE</div>
-        <div class="show-heading">€<%=total%></div>
+        <div id="total" class="show-heading"><%#=total%></div>
         <br><br><br>
 
 <!-- EXTRA ACTIONS -->
@@ -29,5 +34,22 @@
         <%= link_to "These ain't my Cows!", cart_clearCart_path, class:"btn-success"  %>
         <% end %>
       </div>
-</div>
+
 <!-- end of panel-body -->
+</div>
+<!-- Say Hello to JAVASCRIPT -->
+<script>
+
+$(document).ready(function(){
+
+  // get array of quantity and amount
+  var sum = 0.0
+  $('ul#cart li').each(function(i, item){
+    sum += $(item).data('quantity') * $(item).data('price')
+  })
+
+  $("#total").text("€" + sum);
+
+});
+
+</script>
