@@ -7,7 +7,13 @@
             <ul>
               <% @cart.each do | id, quantity | %>
                 <% @product = Product.find_by_id(id) %>
-                <li class="show-heading profile-list"><strong><%= quantity %><%=" "%><%= link_to @product.name, @product %> €<%= @product.price %></strong></li>
+                <li class="show-heading profile-list">
+                  <strong>
+                    <%= quantity %><%=" "%>
+                    <%= link_to @product.name, @product %>
+                    €<%= @product.price %>
+                  </strong>
+                </li>
             </ul>
             <br><br><br>
             <% total += quantity * @product.price %>
@@ -24,9 +30,10 @@
           <%= link_to "Let's get some Cows!", root_path, class:"btn-success" %>
           <br><br><br>
           <% else %>
-        <%= link_to "I need more Cows!", root_path, class:"btn-success"  %>
+        <%= link_to "Keep shopping", root_path, class:"btn-success"  %>
         <br><br><br>
-        <%= link_to "These ain't my Cows!", cart_clearCart_path, class:"btn-success"  %>
+        <%= link_to "Clear", cart_clearCart_path, class:"btn-success"  %>
+        <%= link_to "Order", new_order_path(@order), class: "btn btn-default" %>
         <% end %>
       </div>
 </div>

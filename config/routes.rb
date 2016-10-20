@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: [:new, :create]
+  resources :orders, only: [:new, :create, :show]
   resources :users, only: [:show]
   resources :products
   resources :profiles

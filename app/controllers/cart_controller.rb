@@ -26,7 +26,7 @@ class CartController < ApplicationController
 
   def index
 # if there is a cart, show the cart with info, otherwise show an empy cart
-  if session[:cart] then
+  if session[:cart]
     @cart = session[:cart]
   else
     @cart = {}
