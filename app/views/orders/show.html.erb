@@ -1,0 +1,6 @@
+
+Order # <%= @order.order_number %></h1>
+<% @line_items.each do |li| %>
+<h1 class="cta-title"><%= "#{li.product.name} #{li.quantity} #{li.get_line_price}" %></h1>
+<% end %>
+<%=@order.get_total_price%>
