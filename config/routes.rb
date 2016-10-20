@@ -24,10 +24,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :orders, only: [:new, :create]
   resources :users, only: [:show]
-  resources :products do
-    resources :orders, only: [:create]
-  end
+  resources :products
   resources :profiles
   resources :photos
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

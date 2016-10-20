@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :order do
     user nil
-    product nil
-    price "9.99"
-    total "9.99"
+    order_number 1
+    total_price "9.99"
+    payment "MyString"
+    shipping "MyString"
   end
 end
