@@ -5,6 +5,9 @@ class Order < ApplicationRecord
   # validates :total_price, presence: true
 
 
+  # @order.total_price = get_total_price
+
+
   def get_total_price
     total = 0
     line_items.each do |li|
@@ -12,4 +15,7 @@ class Order < ApplicationRecord
     end
     total
   end
+
+
+
 end

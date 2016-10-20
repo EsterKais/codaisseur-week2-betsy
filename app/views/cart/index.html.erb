@@ -6,7 +6,7 @@
         <div class="amenities">
             <ul>
               <% @cart.each do | id, quantity | %>
-                <% @product = Product.find_by_id(id) %>
+                <% @product = Product.find(id) %>
                 <li class="show-heading profile-list">
                   <strong>
                     <%= quantity %><%=" "%>
@@ -33,7 +33,7 @@
         <%= link_to "Keep shopping", root_path, class:"btn-success"  %>
         <br><br><br>
         <%= link_to "Clear", cart_clearCart_path, class:"btn-success"  %>
-        <%= link_to "Order", new_order_path(@order), class: "btn btn-default" %>
+        <%= link_to "Go to Checkout", new_order_path(@order), class: "btn btn-default" %>
         <% end %>
       </div>
 </div>
