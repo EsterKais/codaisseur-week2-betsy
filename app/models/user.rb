@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_one :profile
-  has_many :orders, dependent: :destroy
-  has_many :ordered_products, through: :orders, source: :product
+  has_many :orders
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

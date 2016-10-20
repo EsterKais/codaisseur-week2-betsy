@@ -1,8 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_many :photos
-  has_many :orders, dependent: :destroy
-  has_many :buyer, through: :orders, source: :user
+  has_many :line_items
   # adding validations
   validates :race, presence: true
   validates :amount, presence: true
@@ -26,14 +25,5 @@ class Product < ApplicationRecord
   def self.search(search)
     Product.where('name ILIKE :search OR race ILIKE :search OR color ILIKE :search OR description ILIKE :search', search: "%#{search}%")
   end
-
-# ----this is for the search form that can search only by race, not currently in use ------
-  # def self.search(search)
-  #   if search
-  #     where(["race LIKE ?", "%#{search}%"])
-  #   else
-  #     all
-  #   end
-  # end
 
 end
