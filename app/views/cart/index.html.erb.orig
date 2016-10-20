@@ -6,24 +6,24 @@
         <div class="amenities">
             <ul id="cart">
               <% @cart.each do | id, quantity | %>
-                <% @product = Product.find_by_id(id) %>
 <<<<<<< HEAD
-                <li id="cartitem-1" class="show-heading profile-list" data-quantity="<%= quantity %>" data-price="<%= @product.price %>">
-                  <span id="quantity"><strong><%= quantity %><%=" "%></span>
-                  <span id="name"><%= link_to @product.name, @product %></span>
-                  <span id="price"> €<%= @product.price %></strong></span>
-                  <span><a href="/cart/<%= @product.id %>", id="AddToCart" class="btn btn-success"> Add Another </a></span>
-                </li>
-              <% end %>
-=======
+                <% @product = Product.find(id) %>
                 <li class="show-heading profile-list">
                   <strong>
                     <%= quantity %><%=" "%>
                     <%= link_to @product.name, @product %>
                     €<%= @product.price %>
                   </strong>
-                </li>
+=======
+                <% @product = Product.find_by_id(id) %>
+                <li id="cartitem-1" class="show-heading profile-list" data-quantity="<%= quantity %>" data-price="<%= @product.price %>">
+                  <span id="quantity"><strong><%= quantity %><%=" "%></span>
+                  <span id="name"><%= link_to @product.name, @product %></span>
+                  <span id="price"> €<%= @product.price %></strong></span>
+                  <span><a href="/cart/<%= @product.id %>", id="AddToCart" class="btn btn-success"> Add Another </a></span>
 >>>>>>> master
+                </li>
+              <% end %>
             </ul>
             <br><br><br>
             <%# total += quantity * @product.price %>
@@ -42,7 +42,7 @@
         <%= link_to "Keep shopping", root_path, class:"btn-success"  %>
         <br><br><br>
         <%= link_to "Clear", cart_clearCart_path, class:"btn-success"  %>
-        <%= link_to "Order", new_order_path(@order), class: "btn btn-default" %>
+        <%= link_to "Go to Checkout", new_order_path(@order), class: "btn btn-default" %>
         <% end %>
       </div>
 

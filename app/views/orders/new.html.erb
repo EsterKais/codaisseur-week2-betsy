@@ -1,6 +1,6 @@
 
     <% if @cart %>
-      <%= form_for @order do |f| %>
+
         <span>Product</span>
         <span>Quantity</span>
         <span>Price</span>
@@ -10,10 +10,17 @@
             <span><%= item.quantity %></span>
             <span><%= item.product.price %></span>
         <% end %>
+
+
+        <%= form_for @order do |f| %>
+
+
           <div class="buttons">
             <%= f.submit "Submit Order", class: "btn btn-primary" %>
           </div>
       <% end %>
+
+
     <% else %>
       <h3>No items in order yet</h3>
     <% end %>
