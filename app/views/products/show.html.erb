@@ -25,7 +25,7 @@
           <% else %>
           <div class="actions">
             <p><%= link_to "Edit Your Cow", edit_product_path, class: "btn btn-success" %></p>
-            <p><%= link_to "Delete", product_path( @product.id ), class: "btn btn-sucess", method: :delete, data: { confirm: "Are you sure?" } %></p>
+            <p><%= link_to "Delete", product_path( @product.id ), class: "btn btn-success", method: :delete, data: { confirm: "Are you sure?" } %></p>
             <p><br><%= link_to "Back", root_path, class: "btn btn-success" %></br></p>
           </div>
 
