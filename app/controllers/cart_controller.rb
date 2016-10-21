@@ -14,9 +14,19 @@ include CartHelper
   end
 
   def add
-    @cart = session[:cart]
     add_item
     render "cart/index"
+  end
+
+  def subtract
+    subtract_item
+    render "cart/index"
+  end
+
+
+  def clearCart
+    session[:cart] = nil
+    redirect_to :action => :index
   end
 
 

@@ -5,19 +5,18 @@ module CartHelper
     id = params[:id]
   # if cart has already been created, use the existing Cart
       if session[:cart] then
-        cart = session[:cart]
+        @cart = session[:cart]
       else
         session[:cart] = {}
-        cart = session[:cart]
+        @cart = session[:cart]
       end
 
       # if the product has already been added to the cart, add another one
-      if cart[id] then
-        cart[id] = cart[id] + 1
+      if @cart[id] then
+        @cart[id] = @cart[id] + 1
       else
-        cart[id] = 1
+        @cart[id] = 1
       end
-    # cart.redirect_to 'cart/index'
 
   end
 
@@ -25,27 +24,19 @@ module CartHelper
     id = params[:id]
   # if cart has already been created, use the existing Cart
       if session[:cart] then
-        cart = session[:cart]
+        @cart = session[:cart]
       else
         session[:cart] = {}
-        cart = session[:cart]
+        @cart = session[:cart]
       end
 
   # if the product has already been added to the cart, add another one
-      if cart[id] then
-        cart[id] = cart[id] - 1
+      if @cart[id] then
+        @cart[id] = @cart[id] - 1
       else
-        cart[id] = 1
+        @cart[id] = 1
       end
-      controller.redirect_to "cart/index"
   end
-
-
-
-    def clearCart
-      session[:cart] = nil
-      controller.redirect_to "cart/index"
-    end
 
 
 
