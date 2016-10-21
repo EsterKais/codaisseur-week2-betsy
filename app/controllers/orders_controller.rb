@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
 
     @order.save
     session[:cart] = {}
-    redirect_to order_path(@order), notice: "Your order was placed"
+    redirect_to order_path(@order), notice: "Your order has been confirmed"
   end
 
 
