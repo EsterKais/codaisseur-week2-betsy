@@ -1,6 +1,23 @@
+<br><br>
+<table class="order-invoice" border="1">
+  <tr><td colspan="4">Order #<%=@order.id%></td></tr>
 
-Order # <%= @order.order_number %></h1>
-<% @line_items.each do |li| %>
-<h1 class="cta-title"><%= "#{li.product.name} #{li.quantity} #{li.get_line_price}" %></h1>
-<% end %>
-<%=@order.get_total_price%>
+  <tr>
+    <td>Product</td>
+    <td>Quantity</td>
+    <td>Item Price</td>
+    <td>Total Price</td>
+  </tr>
+
+
+  <% @line_items.each do |li| %>
+  <tr>
+        <td><%= "#{li.product.race}" %></td>
+        <td><%= "#{li.quantity}" %></td>
+        <td><%= "#{li.product.price}" %></td>
+        <td><%= "#{li.get_line_price}" %></td>
+  </tr>
+  <% end %>
+
+  <tr><td colspan="4" id="total-price"><%=@order.get_total_price%></td><tr>
+</table>
