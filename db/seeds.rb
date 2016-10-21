@@ -1,3 +1,5 @@
+LineItem.delete_all
+Order.delete_all
 Photo.delete_all
 Profile.delete_all
 Product.delete_all
