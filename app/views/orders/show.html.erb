@@ -1,23 +1,26 @@
 <br><br>
-<table class="order-invoice" border="1">
-  <tr><td colspan="4">Order #<%=@order.id%></td></tr>
+<div class="order-page">
 
-  <tr>
-    <td>Product</td>
-    <td>Quantity</td>
-    <td>Item Price</td>
-    <td>Total Price</td>
-  </tr>
+  <table class="specifications show-heading">
+    <tr><td colspan="4" id="ordertitle">Order #<%=@order.id%></td></tr>
+
+    <tr>
+      <td>Product</td>
+      <td>Quantity</td>
+      <td class="headrow">Item Price</td>
+      <td class="headrow">Total Price</td>
+    </tr>
 
 
-  <% @line_items.each do |li| %>
-  <tr>
-        <td><%= "#{li.product.race}" %></td>
-        <td><%= "#{li.quantity}" %></td>
-        <td><%= "#{li.product.price}" %></td>
-        <td><%= "#{li.get_line_price}" %></td>
-  </tr>
-  <% end %>
+    <% @line_items.each do |li| %>
+    <tr>
+          <td><%= "#{li.product.race}" %></td>
+          <td><%= "#{li.quantity}" %></td>
+          <td><%= "€#{li.product.price}" %></td>
+          <td><%= "€#{li.get_line_price}" %></td>
+    </tr>
+    <% end %>
 
-  <tr><td colspan="4" id="total-price"><%=@order.get_total_price%></td><tr>
-</table>
+    <tr><td colspan="4" id="total-price">€<%=@order.get_total_price%></td><tr>
+  </table>
+</div>
