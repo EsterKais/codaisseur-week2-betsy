@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.5'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'selenium-webdriver', '~> 2.53'
 end
 
 group :development do
@@ -57,6 +58,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
+  gem 'database_cleaner'
 end
 
 # devise gem
