@@ -50,6 +50,14 @@ class ProductsController < ApplicationController
       end
     end
 
+    def destroy
+      @product = Product.find(params[:id])
+
+      @product.destroy
+
+      redirect_to products_path, notice: "Cow successfully removed!"
+    end
+
     private
       def set_product
         @product = Product.find(params[:id])
