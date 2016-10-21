@@ -7,6 +7,23 @@
   padding: 0px;
 }
 
+// ORDER PAGE
+table, th, td {
+  width: 50%;
+  height: 50px;
+  text-align: left;
+  padding: 5px;
+
+}
+
+table {
+  margin-left: 25%;
+}
+
+.order-page{
+  align-items: center;
+  text-align: center;
+}
 // NAVBAR + SEARCH FUNCTION
 
 .navbar-header{
@@ -200,7 +217,7 @@ text-align: center;
   background:#F8F8F8;
   color: #074E65;
   letter-spacing: 2px;
-  padding: 5%;
+  padding: 1%;
   margin: 5%;
 }
 
@@ -259,7 +276,7 @@ text-align: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  margin-left: 8%;
+  margin-left: 19%;
 }
 
 // OVERALL STYLING

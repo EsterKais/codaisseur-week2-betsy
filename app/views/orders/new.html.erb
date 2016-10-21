@@ -1,22 +1,27 @@
+<div class="order-page">
+<% if @cart %>
+<table class="specifications show-heading">
+  <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+  </tr>
+</div>
 
-    <% if @cart %>
-
-        <span>Product</span>
-        <span>Quantity</span>
-        <span>Price</span>
-
+<tr>
         <% @order.line_items.each do |item| %>
-            <span><%= item.product.name %></span>
-            <span><%= item.quantity %></span>
-            <span><%= item.product.price %></span>
-        <% end %>
+            <td><%= item.product.race %></td>
+            <td><%= item.quantity %></td>
+            <td>€<%= item.product.price %></td>
 
+  </tr>
+  <% end %>
+</table>
 
         <%= form_for @order do |f| %>
 
-
           <div class="buttons">
-            <%= f.submit "Submit Order", class: "btn btn-primary" %>
+            <%= f.submit "Submit Order", class: "btn-order btn-success" %>
           </div>
       <% end %>
 
@@ -24,3 +29,4 @@
     <% else %>
       <h3>No items in order yet</h3>
     <% end %>
+</div>
